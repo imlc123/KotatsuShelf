@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weird Girl Lit</title>
+  <meta name="description" content="Take a 20-question survey and get 3–5 Weird Girl Lit novel recommendations.">
+  <meta name="theme-color" content="#0d0a0c">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d0a0c'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-style='italic' font-size='36' text-anchor='middle' fill='%23d6324a'%3Ew%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="glow" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <a class="brand" href="./" aria-label="Weird Girl Lit, home">wgl<span>.</span></a>
+    <span class="kicker">a recommendation service for the strange</span>
+  </header>
+
+  <main id="app">
+    <!-- Intro -->
+    <section id="intro" class="screen is-active" aria-labelledby="intro-title">
+      <p class="eyebrow">Vol. 01 &mdash; The Survey</p>
+      <h1 id="intro-title" class="display">
+        <em>Weird</em><br>Girl<br><span class="outline">Lit</span>
+      </h1>
+      <p class="lede">
+        Sad, feral, unhinged, horny, hungry, half-mermaid.
+        Answer twenty questions and we'll pull three to five novels
+        off the shelf for you.
+      </p>
+      <button id="start" class="btn btn-primary" type="button">
+        Begin the survey <span aria-hidden="true">&rarr;</span>
+      </button>
+      <p class="fine">Takes about three minutes. No sign-up. Nothing leaves your browser.</p>
+    </section>
+
+    <!-- Quiz -->
+    <section id="quiz" class="screen" aria-live="polite">
+      <div class="progress" role="progressbar" aria-valuemin="1" aria-valuemax="20" aria-valuenow="1" aria-label="Survey progress">
+        <div class="progress-bar"></div>
+      </div>
+      <div class="q-meta">
+        <span id="q-count" class="mono">01 / 20</span>
+        <button id="back" class="link" type="button">&larr; back</button>
+      </div>
+      <h2 id="q-text" class="question" tabindex="-1"></h2>
+      <ol id="answers" class="answers"></ol>
+      <p class="hint mono">Tip: press 1&ndash;4 to answer</p>
+    </section>
+
+    <!-- Results -->
+    <section id="results" class="screen" aria-labelledby="results-title">
+      <p class="eyebrow">Your reading</p>
+      <h2 id="results-title" class="display display-sm"></h2>
+      <p id="archetype-desc" class="lede"></p>
+      <div id="profile" class="profile" aria-label="Your top tags"></div>
+      <ol id="recs" class="recs"></ol>
+      <div class="actions">
+        <button id="copy" class="btn btn-primary" type="button">Copy my list</button>
+        <button id="restart" class="btn btn-ghost" type="button">Retake the survey</button>
+      </div>
+      <p id="copy-status" class="fine" role="status"></p>
+    </section>
+  </main>
+
+  <footer class="foot mono">
+    <span>Weird Girl Lit &middot; KotatsuShelf</span>
+    <span>Read strange. Read often.</span>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
